@@ -1,5 +1,5 @@
 # Melanoma-Detection
-
+This project was completed in collaboration with a study partner as part of a data science workshop.
 1. **Data Preparation:**
    - **Mount Google Drive:** Set up paths for training, validation, and test datasets.
    - **Load Libraries:** You’re using libraries like `cv2`, `matplotlib`, `tensorflow`, and `fastai` for different tasks.
