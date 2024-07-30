@@ -1,41 +1,104 @@
-# Melanoma-Detection
-This project was completed in collaboration with a study partner as part of a data science workshop.
-1. **Data Preparation:**
-   - **Mount Google Drive:** Set up paths for training, validation, and test datasets.
-   - **Load Libraries:** You’re using libraries like `cv2`, `matplotlib`, `tensorflow`, and `fastai` for different tasks.
-   - **Data Loading:** Created functions to load data into DataFrames, visualized data distribution, and performed data augmentation to balance the dataset.
-   - **Data Visualization:** Analyzed image characteristics (color channels, noise, etc.) and applied various image processing techniques (Gaussian blur, contrast adjustment).
 
-2. **Data Augmentation:**
-   - **Upsampling:** Added rotated images to balance classes, improving the model's ability to generalize.
-   - **Image Processing:** Applied techniques like noise reduction, Gaussian blur, and thresholding to enhance image features.
+# Melanoma Detection
 
-3. **Model Training:**
-   - **CNN Implementation:** Used FastAI’s `DataBlock` API to create a data pipeline and trained a ResNet18 model.
-   - **Evaluation:** Achieved an error rate of 0.17 after training for 4 epochs, indicating a precision of 83%.
+Melanoma Detection is a machine learning project aimed at classifying melanoma from images using Convolutional Neural Networks (CNNs). This project involves data preparation, augmentation, model training, and evaluation to create a robust system for early melanoma detection. The project was developed in collaboration with a fellow student as part of a data science workshop.
 
-### Considerations and Next Steps
+## Table of Contents
 
-1. **Data Augmentation:**
-   - **Enhance Diversity:** Consider adding more augmentation techniques such as scaling, cropping, or color jittering to improve robustness.
-   - **Advanced Libraries:** Explore libraries like `imgaug` or `albumentations` for more sophisticated augmentation techniques.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Data](#data)
+- [Model Architecture](#model-architecture)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
 
-2. **Model Evaluation:**
-   - **Additional Metrics:** Besides error rate, look at metrics like precision, recall, F1-score, and AUC-ROC for a comprehensive evaluation.
-   - **Confusion Matrix:** Plot confusion matrices to understand where the model is making errors.
+## Introduction
 
-3. **Model Improvement:**
-   - **Hyperparameter Tuning:** Experiment with learning rates, batch sizes, and different optimizers.
-   - **Alternative Architectures:** Try other architectures such as ResNet34, DenseNet, or EfficientNet for potentially better performance.
+Melanoma Detection is designed to aid in the early detection of melanoma by classifying skin lesion images. The system uses deep learning techniques, specifically Convolutional Neural Networks (CNNs), to analyze and classify images. This project was completed in collaboration with a fellow student as part of a data science workshop.
 
-4. **Validation and Testing:**
-   - **Cross-Validation:** Implement k-fold cross-validation to ensure consistent performance across different subsets of data.
-   - **External Validation:** Test your model on external datasets to verify its generalizability.
+## Features
 
-5. **Deployment:**
-   - **Model Saving:** Save your trained model and consider exporting it for deployment in a web or mobile application.
-   - **User Interface:** Develop a simple interface for users to upload images and receive melanoma predictions.
+- **Data Preparation**: Load and preprocess skin lesion images.
+- **Data Augmentation**: Apply various augmentation techniques to enhance model robustness.
+- **Model Training**: Train a CNN model using FastAI's ResNet18 architecture.
+- **Model Evaluation**: Assess model performance using various metrics.
 
-6. **Documentation and Reporting:**
-   - Document your findings, methodologies, and results clearly. Prepare a report or presentation summarizing your approach, results, and potential impact.
+## Installation
+
+To run the Melanoma Detection project, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Shay-Gabison/Melanoma-Detection.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd Melanoma-Detection
+   ```
+
+3. Install the required dependencies. You can use `pip` to install the necessary Python packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+To train the model and evaluate its performance, follow these steps:
+
+1. Ensure that you have your dataset organized in the appropriate directories (training, validation, and testing).
+
+2. Run the main training script:
+   ```bash
+   python train_model.py
+   ```
+
+3. After training, evaluate the model:
+   ```bash
+   python evaluate_model.py
+   ```
+
+## Data
+
+The dataset used for this project consists of skin lesion images, organized into training, validation, and test sets. The data is preprocessed and augmented to balance the classes and enhance model performance.
+
+- **Data Source**: [Link to dataset or dataset description]
+- **Data Structure**: The dataset should be organized as follows:
+  ```
+  data/
+  ├── train/
+  │   ├── melanoma/
+  │   └── non_melanoma/
+  ├── valid/
+  │   ├── melanoma/
+  │   └── non_melanoma/
+  └── test/
+      ├── melanoma/
+      └── non_melanoma/
+  ```
+
+## Model Architecture
+
+The project uses a Convolutional Neural Network (CNN) with the following architecture:
+
+- **Base Model**: ResNet18
+- **Framework**: FastAI
+- **Data Augmentation**: Techniques including rotation, scaling, and color jittering
+
+## Results
+
+The model achieved an error rate of 0.17 after training for 4 epochs, which corresponds to a precision of 83%. Future improvements may include further data augmentation, hyperparameter tuning, and experimentation with different CNN architectures.
+
+## Contributing
+
+This project was developed in collaboration with a fellow student. Contributions are welcome. To contribute:
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Push to the branch.
+5. Create a pull request.
 
